@@ -142,6 +142,9 @@ export function useAudioPlayer(
 
     resolveAndReplaceSource();
 
+    // Ensure the audio session is active when a player is created
+    AudioModule.setIsAudioActiveAsync(true);
+
     return () => {
       isCancelled = true;
     };
@@ -363,6 +366,8 @@ export function createAudioPlayer(
         }
       });
   }
+
+  AudioModule.setIsAudioActiveAsync(true);
 
   return player;
 }
