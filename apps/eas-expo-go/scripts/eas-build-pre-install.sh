@@ -21,6 +21,10 @@ elif [ "$EAS_BUILD_PLATFORM" = "ios" ]; then
   HOMEBREW_NO_AUTO_UPDATE=1 brew install cmake
 fi
 
+if [ "$EAS_BUILD_PROFILE" = "release-client" ] || [ "$EAS_BUILD_PROFILE" = "publish-client" ]; then
+  cp "$DECRYPTED_KEYS" "$ROOT_DIR/secrets/keys.json"
+fi
+
 cat << EOF > $ROOT_DIR/.gitmodules
 [submodule "react-native-lab/react-native"]
   path = react-native-lab/react-native
