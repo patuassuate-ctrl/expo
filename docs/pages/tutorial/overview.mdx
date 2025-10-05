@@ -1,25 +1,58 @@
----
-title: Overview of tutorials and UI guides
-sidebar_title: Overview
-hideTOC: true
----
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
-import { GraduationHat02DuotoneIcon } from '@expo/styleguide-icons/duotone/GraduationHat02DuotoneIcon';
+export default function App() {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-import { BoxLink } from '~/ui/components/BoxLink';
+  const handleLogin = () => {
+    if (email === '' || senha === '') {
+      Alert.alert('Atenção', 'Preencha todos os campos!');
+      return;
+    }
+    Alert.alert('Bem-vindo ao Pick Pulse!', `Login: ${email}`);
+  };
 
-The **Learn** section is a collection of tutorials and other guides that help you learn about Expo and EAS. It covers the following:
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo}>🔥 Pick Pulse 🔥</Text>
+      <Text style={styles.subtitle}>Entre para sentir a vibração!</Text>
 
-<BoxLink
-  title="Expo Tutorial"
-  description="If you are new to Expo, we recommend starting with this tutorial. It provides a step-by-step guide on how to build an Expo app that runs on Android, iOS and web."
-  href="/tutorial/introduction/"
-  Icon={GraduationHat02DuotoneIcon}
-/>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite seu e-mail"
+        placeholderTextColor="#aaa"
+        keyboardType="email-address"
+        value={email}
+        onChangeText={setEmail}
+      />
 
-<BoxLink
-  title="EAS Tutorial"
-  description="If you are looking to learn about building your Android and iOS apps using Expo Application Services (EAS), this tutorial covers the EAS Build, Update, and Submit workflows."
-  href="/tutorial/eas/introduction/"
-  Icon={GraduationHat02DuotoneIcon}
-/>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite sua senha"
+        placeholderTextColor="#aaa"
+        secureTextEntry
+        value={senha}
+        onChangeText={setSenha}
+      />
+
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Text style={styles.link}>Criar conta</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#7c3aed', justifyContent: 'center', alignItems: 'center', padding: 20 },
+  logo: { fontSize: 34, fontWeight: 'bold', color: '#fff', marginBottom: 20 },
+  subtitle: { color: '#eee', marginBottom: 30, fontSize: 16 },
+  input: { backgroundColor: '#fff', width: '90%', padding: 12, borderRadius: 8, marginBottom: 15 },
+  button: { backgroundColor: '#fff', paddingHorizontal: 40, paddingVertical: 12, borderRadius: 8 },
+  buttonText: { color: '#7c3aed', fontWeight: 'bold', fontSize: 16 },
+  link: { color: '#fff', marginTop: 20, textDecorationLine: 'underline' },
+});
