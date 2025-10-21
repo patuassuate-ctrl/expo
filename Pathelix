@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pathelix♾️ — O Movimento Infinito</title>
+  <style>
+    body {
+      margin: 0; font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #0a0f2c 0%, #1a1f36 100%);
+      color: white; text-align: center;
+    }
+    .container {
+      max-width: 800px; margin: 0 auto; padding: 60px 20px;
+    }
+    h1 {
+      font-size: 2.8rem; margin-bottom: 10px;
+      background: linear-gradient(to right, #d4af37, #4fc3f7);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    p {
+      font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px;
+    }
+    .form {
+      display: flex; flex-direction: column; gap: 15px;
+      max-width: 400px; margin: 0 auto;
+    }
+    input {
+      padding: 14px; border-radius: 30px; border: none;
+      font-size: 1rem; outline: none;
+    }
+    button {
+      background: linear-gradient(to right, #d4af37, #4fc3f7);
+      color: #0a0f2c; font-weight: bold; border: none;
+      padding: 14px; border-radius: 30px; font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .footer {
+      margin-top: 50px; opacity: 0.6; font-size: 0.9rem;
+    }
+    .spiral {
+      font-size: 2rem; margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spiral">♾️</div>
+    <h1>PATHHELIX</h1>
+    <p>Move in Spirals. Think in Infinity.</p>
+    <p>O futuro da mobilidade está em movimento.<br>Seja um dos primeiros a entrar no fluxo.</p>
+    
+    <div class="form">
+      <input type="email" placeholder="Seu e-mail profissional" required />
+      <button>PRÉ-REGISTRO EXCLUSIVO</button>
+    </div>
+
+    <div class="footer">
+      <p>As primeiras 500 reservas ganham acesso à Edição Limitada LYRA.<br>
+      Lançamento oficial em breve. pathelix.infinite</p>
+    </div>
+  </div>
+</body>
+</html>
